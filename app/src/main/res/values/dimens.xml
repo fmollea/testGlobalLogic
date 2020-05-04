@@ -10,4 +10,8 @@
     <dimen name="dimen_ui_24">24dp</dimen>
     <dimen name="dimen_ui_230">230dp</dimen>
     <dimen name="dimen_ui_100">100dp</dimen>
+    <dimen name="dimen_ui_32">32dp</dimen>
+    <dimen name="dimen_ui_64">64dp</dimen>
+    <dimen name="dimen_ui_316">316dp</dimen>
+    <dimen name="dimen_ui_50">50dp</dimen>
 </resources>

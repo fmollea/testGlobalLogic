@@ -25,6 +25,5 @@ class LatopViewModel(
         } catch (e: Exception) {
             emit(NetworkStatus.error(""))
         }
-
     }
 }
