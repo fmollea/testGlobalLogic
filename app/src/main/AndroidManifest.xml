@@ -13,8 +13,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".presentation.ui.activities.LatopDetailActivity"></activity>
-        <activity android:name=".presentation.ui.activities.LatopListActivity">
+        <activity android:name=".presentation.ui.activities.LaptopDetailActivity"></activity>
+        <activity android:name=".presentation.ui.activities.LaptopListActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -11,20 +11,20 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.mosh.testgloballogic.R
 import com.mosh.testgloballogic.domain.LatopItem
-import com.mosh.testgloballogic.presentation.ui.activities.LatopDetailActivity
-import kotlinx.android.synthetic.main.latop_item_row.view.*
+import com.mosh.testgloballogic.presentation.ui.activities.LaptopDetailActivity
+import kotlinx.android.synthetic.main.laptop_item_row.view.*
 
-class LatopAdapter(
+class LaptopAdapter(
     private val context: Context,
     var items: List<LatopItem>
-) : RecyclerView.Adapter<LatopAdapter.LatopViewHolder>() {
+) : RecyclerView.Adapter<LaptopAdapter.LaptopViewHolder>() {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = LatopViewHolder(LayoutInflater
-        .from(parent.context).inflate(R.layout.latop_item_row, parent, false))
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = LaptopViewHolder(LayoutInflater
+        .from(parent.context).inflate(R.layout.laptop_item_row, parent, false))
 
     override fun getItemCount() = items.size
 
-    override fun onBindViewHolder(holder: LatopViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: LaptopViewHolder, position: Int) {
         val currentItem = items[position]
 
         holder.itemView.tvTitle.text = currentItem.title
@@ -37,11 +37,11 @@ class LatopAdapter(
             .into(holder.itemView.ivImage)
 
         holder.itemView.setOnClickListener {
-            val intent = Intent(context, LatopDetailActivity::class.java)
-            intent.putExtra("LATOP", currentItem)
+            val intent = Intent(context, LaptopDetailActivity::class.java)
+            intent.putExtra("LAPTOP", currentItem)
             startActivity(context, intent, null)
         }
     }
 
-    inner class LatopViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
+    inner class LaptopViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
 }

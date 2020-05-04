@@ -2,20 +2,20 @@ package com.mosh.testgloballogic.presentation.viewmodels
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.liveData
-import com.mosh.testgloballogic.data.repository.LatopRepository
-import com.mosh.testgloballogic.data.repository.data.LatopResponse
+import com.mosh.testgloballogic.data.repository.LaptopRepository
+import com.mosh.testgloballogic.data.repository.data.LaptopResponse
 import com.mosh.testgloballogic.utils.NetworkStatus
 import kotlinx.coroutines.Dispatchers
 import retrofit2.Response
 import java.lang.Exception
 
-class LatopViewModel(
-    private val repository: LatopRepository
+class LaptopViewModel(
+    private val repository: LaptopRepository
 ) : ViewModel() {
-    fun getLatops() = liveData(Dispatchers.IO) {
+    fun getLaptops() = liveData(Dispatchers.IO) {
         emit(NetworkStatus.loading(null))
         try {
-            val retrieved: Response<LatopResponse> = repository.getListLatops()
+            val retrieved: Response<LaptopResponse> = repository.getListLaptops()
 
             if (retrieved.isSuccessful) {
                 emit(NetworkStatus.success(retrieved.body()))

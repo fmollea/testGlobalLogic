@@ -6,36 +6,36 @@ import android.view.View
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.mosh.testgloballogic.data.repository.LatopRepository
-import com.mosh.testgloballogic.data.repository.data.LatopResponse
-import com.mosh.testgloballogic.databinding.LatopListActivityBinding
+import com.mosh.testgloballogic.data.repository.LaptopRepository
+import com.mosh.testgloballogic.data.repository.data.LaptopResponse
+import com.mosh.testgloballogic.databinding.LaptopListActivityBinding
 import com.mosh.testgloballogic.domain.LatopItem
-import com.mosh.testgloballogic.presentation.ui.adapters.LatopAdapter
-import com.mosh.testgloballogic.presentation.viewmodels.LatopViewModel
-import com.mosh.testgloballogic.presentation.viewmodels.LatopViewModelFactory
+import com.mosh.testgloballogic.presentation.ui.adapters.LaptopAdapter
+import com.mosh.testgloballogic.presentation.viewmodels.LaptopViewModel
+import com.mosh.testgloballogic.presentation.viewmodels.LaptopViewModelFactory
 import com.mosh.testgloballogic.utils.NetworkStatus
 import com.mosh.testgloballogic.utils.Status
 
-class LatopListActivity : AppCompatActivity() {
+class LaptopListActivity : AppCompatActivity() {
 
-    private lateinit var viewModel : LatopViewModel
-    private lateinit var adapter : LatopAdapter
-    private lateinit var binding : LatopListActivityBinding
+    private lateinit var viewModel : LaptopViewModel
+    private lateinit var adapter : LaptopAdapter
+    private lateinit var binding : LaptopListActivityBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = LatopListActivityBinding.inflate(layoutInflater)
+        binding = LaptopListActivityBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val factory = LatopViewModelFactory(LatopRepository())
-        viewModel = ViewModelProviders.of(this, factory).get(LatopViewModel::class.java)
+        val factory = LaptopViewModelFactory(LaptopRepository())
+        viewModel = ViewModelProviders.of(this, factory).get(LaptopViewModel::class.java)
 
         initView()
         observeViewModel()
     }
 
     private fun observeViewModel() {
-        val listLatopsObserver = Observer<NetworkStatus<LatopResponse>> {
+        val listLatopsObserver = Observer<NetworkStatus<LaptopResponse>> {
             when(it.status) {
                 Status.LOADING -> showLoading()
                 Status.SUCCESS -> {
@@ -49,7 +49,7 @@ class LatopListActivity : AppCompatActivity() {
             }
         }
 
-        viewModel.getLatops().observe(this, listLatopsObserver)
+        viewModel.getLaptops().observe(this, listLatopsObserver)
     }
 
     private fun showErrorScreen() {
@@ -71,9 +71,9 @@ class LatopListActivity : AppCompatActivity() {
 
 
     private fun initView() {
-        supportActionBar?.title = "List of latops"
+        supportActionBar?.title = "List of laptops"
 
-        adapter = LatopAdapter(this, listOf())
+        adapter = LaptopAdapter(this, listOf())
         binding.rvListLatops.layoutManager = LinearLayoutManager(this)
         binding.rvListLatops.adapter = adapter
     }
