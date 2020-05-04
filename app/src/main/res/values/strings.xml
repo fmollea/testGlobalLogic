@@ -1,3 +1,6 @@
 <resources>
-    <string name="app_name">testGlobalLogic</string>
+    <string name="app_name">Test GL</string>
+    <string name="see_more_text">See more..</string>
+    <string name="button_retry_text">Retry</string>
+    <string name="text_an_error_has_ocurred">An error has occurred</string>
 </resources>

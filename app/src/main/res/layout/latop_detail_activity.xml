@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".presentation.ui.activities.LatopDetailActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/ivImageLatop"
+            android:layout_width="@dimen/dimen_ui_0"
+            android:layout_height="@dimen/dimen_ui_230"
+            android:layout_marginStart="@dimen/dimen_ui_16"
+            android:layout_marginTop="@dimen/dimen_ui_24"
+            android:layout_marginEnd="@dimen/dimen_ui_16"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_launcher_background" />
+
+        <TextView
+            android:id="@+id/tvDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_ui_16"
+            android:layout_marginTop="@dimen/dimen_ui_24"
+            android:layout_marginEnd="@dimen/dimen_ui_16"
+            android:layout_marginBottom="@dimen/dimen_ui_16"
+            android:gravity="center"
+            android:textSize="@dimen/description_detail_size"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ivImageLatop" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>

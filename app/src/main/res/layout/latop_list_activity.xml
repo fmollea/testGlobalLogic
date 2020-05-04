@@ -4,15 +4,63 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".presentation.ui.LatopList">
+    tools:context=".presentation.ui.activities.LatopListActivity">
 
-    <TextView
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvListLatops"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:visibility="gone"/>
+
+    <ProgressBar
+        android:id="@+id/pbLoading"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
+        android:minWidth="50dp"
+        android:minHeight="50dp"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clErrorContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/tvError"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_ui_16"
+            android:layout_marginEnd="@dimen/dimen_ui_16"
+            android:layout_marginBottom="16dp"
+            android:gravity="center"
+            android:text="@string/text_an_error_has_ocurred"
+            android:textSize="@dimen/description_detail_size"
+            app:layout_constraintBottom_toTopOf="@+id/btRetry"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/btRetry"
+            android:layout_width="0dp"
+            android:layout_height="32dp"
+            android:layout_marginStart="64dp"
+            android:layout_marginEnd="64dp"
+            android:layout_marginBottom="316dp"
+            android:background="@color/colorPrimary"
+            android:gravity="center"
+            android:text="@string/button_retry_text"
+            android:textColor="@android:color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
