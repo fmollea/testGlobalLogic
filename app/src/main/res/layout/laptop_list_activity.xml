@@ -36,13 +36,13 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/dimen_ui_16"
             android:layout_marginEnd="@dimen/dimen_ui_16"
-            android:layout_marginBottom="@dimen/dimen_ui_16"
+            android:layout_marginBottom="16dp"
             android:gravity="center"
             android:text="@string/text_an_error_has_ocurred"
             android:textSize="@dimen/description_detail_size"
             app:layout_constraintBottom_toTopOf="@+id/btRetry"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent" />
 
         <Button
@@ -51,15 +51,15 @@
             android:layout_height="@dimen/dimen_ui_32"
             android:layout_marginStart="@dimen/dimen_ui_64"
             android:layout_marginEnd="@dimen/dimen_ui_64"
-            android:layout_marginBottom="@dimen/dimen_ui_316"
             android:background="@color/colorPrimary"
             android:gravity="center"
             android:text="@string/button_retry_text"
             android:textColor="@android:color/white"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
